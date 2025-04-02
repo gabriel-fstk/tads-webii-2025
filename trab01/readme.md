@@ -1,6 +1,6 @@
 # 🚀 API Express.js - Liga da Justiça
 
-Esta API desenvolvida com **Express.js** implementa diversas funcionalidades como rotas GET, POST, middlewares, tratamento de erros e manipulação de dados com herois da **Liga da Justiça**.
+Esta API desenvolvida com **Express.js** implementa diversas funcionalidades como rotas GET, POST, middlewares, tratamento de erros e manipulação de dados com personagens da **Liga da Justiça**.
 
 ## 📌 Requisitos
 Antes de iniciar, você precisará ter instalado:
@@ -27,57 +27,54 @@ Antes de iniciar, você precisará ter instalado:
 ## 📌 Executando o Servidor
 Para rodar o servidor, utilize:
 ```sh
-npm start
+npm run dev
 # ou
-node server.js
+node src/server.js
 ```
 Por padrão, a API estará disponível em **http://localhost:3000**
 
 ---
 
-## 📌 Endpoints e Testes
-Aqui estão os endpoints disponíveis e como testá-los usando **cURL** (alternativamente, você pode usar o **Postman** ou **Insomnia**):
+## 📌 Endpoints e Testes (Postman)
+Para testar os endpoints, utilize o **Postman** seguindo os passos abaixo:
+
+1. **Abra o Postman**.
+2. **Crie uma nova requisição** e insira a URL correspondente.
+3. **Escolha o método correto (GET, POST, etc.)**.
+4. **Caso necessário, adicione cabeçalhos ou corpo da requisição**.
+5. **Clique em "Send"** e visualize a resposta.
 
 ### 🏠 1. Boas-Vindas
-**Rota:** `GET /`
-```sh
-curl http://localhost:3000/
-```
-**Resposta esperada:**
+- **Método:** `GET`
+- **URL:** `http://localhost:3000/`
+- **Resposta esperada:**
 ```json
 { "mensagem": "Bem-vindo à API da Liga da Justiça!" }
 ```
 
 ### 🦸‍♂️ 2. Saudação Personalizada
-**Rota:** `GET /saudacao/:nome`
-```sh
-curl http://localhost:3000/saudacao/Batman
-```
-**Resposta esperada:**
+- **Método:** `GET`
+- **URL:** `http://localhost:3000/saudacao/Batman`
+- **Resposta esperada:**
 ```json
 { "mensagem": "Olá, Batman!" }
 ```
 
 ### 🔐 3. Middleware de Autenticação
-**Rota protegida:** `GET /protegido`
-```sh
-curl -H "Authorization: Bearer token_valido" http://localhost:3000/protegido
-```
-Sem o token:
-```sh
-curl http://localhost:3000/protegido
-```
-**Resposta esperada (sem token):**
+- **Método:** `GET`
+- **URL:** `http://localhost:3000/protegido`
+- **Cabeçalho:**
+  - **Chave:** Authorization
+  - **Valor:** Bearer 12345
+- **Resposta esperada sem token:**
 ```json
 { "erro": "Acesso negado. Token não fornecido." }
 ```
 
-### 📋 4. Listagem de herois
-**Rota:** `GET /herois`
-```sh
-curl http://localhost:3000/herois
-```
-**Resposta esperada:**
+### 📋 4. Listagem de Personagens
+- **Método:** `GET`
+- **URL:** `http://localhost:3000/personagens`
+- **Resposta esperada:**
 ```json
 [
   { "id": 1, "nome": "Superman" },
@@ -85,48 +82,52 @@ curl http://localhost:3000/herois
 ]
 ```
 
-### 🔍 5. Filtrar herois (Query Params)
-**Rota:** `GET /herois?nome=Batman`
-```sh
-curl "http://localhost:3000/herois?nome=Batman"
-```
-**Resposta esperada:**
+### 🔍 5. Filtrar Personagens (Query Params)
+- **Método:** `GET`
+- **URL:** `http://localhost:3000/personagens?nome=Batman`
+- **Resposta esperada:**
 ```json
 [
   { "id": 2, "nome": "Batman" }
 ]
 ```
 
-### ✍️ 6. Adicionar Novo Herói
-**Rota:** `POST /herois`
-```sh
-curl -X POST http://localhost:3000/herois \
-     -H "Content-Type: application/json" \
-     -d '{ "nome": "Mulher Maravilha" }'
+### ✍️ 6. Adicionar Novo Personagem
+- **Método:** `POST`
+- **URL:** `http://localhost:3000/personagens`
+- **Cabeçalho:**
+  - **Chave:** Content-Type
+  - **Valor:** application/json
+- **Corpo da requisição (JSON):**
+```json
+{
+  "nome": "Mulher Maravilha"
+}
 ```
-**Resposta esperada:**
+- **Resposta esperada:**
 ```json
 { "id": 3, "nome": "Mulher Maravilha" }
 ```
 
 ### ❌ 7. Validação de Dados
-Tente enviar um POST sem um nome válido:
-```sh
-curl -X POST http://localhost:3000/herois \
-     -H "Content-Type: application/json" \
-     -d '{}'
+- **Método:** `POST`
+- **URL:** `http://localhost:3000/personagens`
+- **Cabeçalho:**
+  - **Chave:** Content-Type
+  - **Valor:** application/json
+- **Corpo da requisição (JSON) inválido:**
+```json
+{}
 ```
-**Resposta esperada:**
+- **Resposta esperada:**
 ```json
 { "erro": "O campo 'nome' é obrigatório." }
 ```
 
 ### ⚠️ 8. Testando Tratamento Global de Erros
-**Rota:** `GET /erro`
-```sh
-curl http://localhost:3000/erro
-```
-**Resposta esperada:**
+- **Método:** `GET`
+- **URL:** `http://localhost:3000/erro`
+- **Resposta esperada:**
 ```json
 { "erro": "Algo deu errado!" }
 ```
@@ -143,5 +144,5 @@ Fique à vontade para contribuir enviando **Pull Requests** ou reportando proble
 Este projeto está sob a licença **MIT**. Sinta-se livre para usá-lo e modificá-lo como quiser.
 
 ---
-**Desenvolvido por [Gabriel Soares](https://github.com/gabriel-fstk)** ??
+**Desenvolvido por [Gabriel Soares](https://github.com/gabriel-fstk)** 🚀
 
