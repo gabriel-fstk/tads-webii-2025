@@ -1,6 +1,6 @@
 # 🚀 API Express.js - Liga da Justiça
 
-Esta API desenvolvida com **Express.js** implementa diversas funcionalidades como rotas GET, POST, middlewares, tratamento de erros e manipulação de dados com personagens da **Liga da Justiça**.
+Esta API desenvolvida com **Express.js** implementa diversas funcionalidades como rotas GET, POST, middlewares, tratamento de erros e manipulação de dados com herois da **Liga da Justiça**.
 
 ## 📌 Requisitos
 Antes de iniciar, você precisará ter instalado:
@@ -71,9 +71,9 @@ Para testar os endpoints, utilize o **Postman** seguindo os passos abaixo:
 { "erro": "Acesso negado. Token não fornecido." }
 ```
 
-### 📋 4. Listagem de Personagens
+### 📋 4. Listagem de Herois
 - **Método:** `GET`
-- **URL:** `http://localhost:3000/personagens`
+- **URL:** `http://localhost:3000/herois`
 - **Resposta esperada:**
 ```json
 [
@@ -82,9 +82,9 @@ Para testar os endpoints, utilize o **Postman** seguindo os passos abaixo:
 ]
 ```
 
-### 🔍 5. Filtrar Personagens (Query Params)
+### 🔍 5. Filtrar herois (Query Params)
 - **Método:** `GET`
-- **URL:** `http://localhost:3000/personagens?nome=Batman`
+- **URL:** `http://localhost:3000/herois?nome=Batman`
 - **Resposta esperada:**
 ```json
 [
@@ -92,26 +92,27 @@ Para testar os endpoints, utilize o **Postman** seguindo os passos abaixo:
 ]
 ```
 
-### ✍️ 6. Adicionar Novo Personagem
+### ✍️ 6. Adicionar Novo Herói
 - **Método:** `POST`
-- **URL:** `http://localhost:3000/personagens`
+- **URL:** `http://localhost:3000/herois`
 - **Cabeçalho:**
   - **Chave:** Content-Type
   - **Valor:** application/json
 - **Corpo da requisição (JSON):**
 ```json
 {
-  "nome": "Mulher Maravilha"
+  "nome": "Mulher Maravilha",
+  "poder": "Força e inteligência"
 }
 ```
 - **Resposta esperada:**
 ```json
-{ "id": 3, "nome": "Mulher Maravilha" }
+{ "id": 3, "nome": "Mulher Maravilha", "poder": "Força e inteligência" }
 ```
 
 ### ❌ 7. Validação de Dados
 - **Método:** `POST`
-- **URL:** `http://localhost:3000/personagens`
+- **URL:** `http://localhost:3000/herois`
 - **Cabeçalho:**
   - **Chave:** Content-Type
   - **Valor:** application/json
@@ -121,7 +122,7 @@ Para testar os endpoints, utilize o **Postman** seguindo os passos abaixo:
 ```
 - **Resposta esperada:**
 ```json
-{ "erro": "O campo 'nome' é obrigatório." }
+{ "erro": "Nome e poder são obrigatórios!" }
 ```
 
 ### ⚠️ 8. Testando Tratamento Global de Erros
@@ -129,7 +130,7 @@ Para testar os endpoints, utilize o **Postman** seguindo os passos abaixo:
 - **URL:** `http://localhost:3000/erro`
 - **Resposta esperada:**
 ```json
-{ "erro": "Algo deu errado!" }
+{ "erro": "Erro interno do servidor!" }
 ```
 
 ## 📌 Tecnologias Utilizadas
