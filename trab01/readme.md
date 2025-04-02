@@ -1,15 +1,15 @@
-# ?? API Express.js - Liga da Justiça
+# ğŸš€ API Express.js - Liga da JustiÃ§a
 
-Esta API desenvolvida com **Express.js** implementa diversas funcionalidades como rotas GET, POST, middlewares, tratamento de erros e manipulação de dados com herois da **Liga da Justiça**.
+Esta API desenvolvida com **Express.js** implementa diversas funcionalidades como rotas GET, POST, middlewares, tratamento de erros e manipulaÃ§Ã£o de dados com herois da **Liga da JustiÃ§a**.
 
-## ?? Requisitos
-Antes de iniciar, você precisará ter instalado:
+## ğŸ“Œ Requisitos
+Antes de iniciar, vocÃª precisarÃ¡ ter instalado:
 - **Node.js** (>= v18)
 - **npm** ou **yarn**
 
-## ?? Instalação
+## ğŸ“Œ InstalaÃ§Ã£o
 
-1. Clone o repositório:
+1. Clone o repositÃ³rio:
    ```sh
    git clone https://github.com/seu-usuario/seu-repositorio.git
    ```
@@ -17,48 +17,48 @@ Antes de iniciar, você precisará ter instalado:
    ```sh
    cd nome-do-projeto
    ```
-3. Instale as dependências:
+3. Instale as dependÃªncias:
    ```sh
    npm install
    # ou
    yarn install
    ```
 
-## ?? Executando o Servidor
+## ğŸ“Œ Executando o Servidor
 Para rodar o servidor, utilize:
 ```sh
 npm start
 # ou
 node server.js
 ```
-Por padrão, a API estará disponível em **http://localhost:3000**
+Por padrÃ£o, a API estarÃ¡ disponÃ­vel em **http://localhost:3000**
 
 ---
 
-## ?? Endpoints e Testes
-Aqui estão os endpoints disponíveis e como testá-los usando **cURL** (alternativamente, você pode usar o **Postman** ou **Insomnia**):
+## ğŸ“Œ Endpoints e Testes
+Aqui estÃ£o os endpoints disponÃ­veis e como testÃ¡-los usando **cURL** (alternativamente, vocÃª pode usar o **Postman** ou **Insomnia**):
 
-### ?? 1. Boas-Vindas
+### ğŸ  1. Boas-Vindas
 **Rota:** `GET /`
 ```sh
 curl http://localhost:3000/
 ```
 **Resposta esperada:**
 ```json
-{ "mensagem": "Bem-vindo à API da Liga da Justiça!" }
+{ "mensagem": "Bem-vindo Ã  API da Liga da JustiÃ§a!" }
 ```
 
-### ????? 2. Saudação Personalizada
+### ğŸ¦¸â€â™‚ï¸ 2. SaudaÃ§Ã£o Personalizada
 **Rota:** `GET /saudacao/:nome`
 ```sh
 curl http://localhost:3000/saudacao/Batman
 ```
 **Resposta esperada:**
 ```json
-{ "mensagem": "Olá, Batman!" }
+{ "mensagem": "OlÃ¡, Batman!" }
 ```
 
-### ?? 3. Middleware de Autenticação
+### ğŸ” 3. Middleware de AutenticaÃ§Ã£o
 **Rota protegida:** `GET /protegido`
 ```sh
 curl -H "Authorization: Bearer token_valido" http://localhost:3000/protegido
@@ -69,10 +69,10 @@ curl http://localhost:3000/protegido
 ```
 **Resposta esperada (sem token):**
 ```json
-{ "erro": "Acesso negado. Token não fornecido." }
+{ "erro": "Acesso negado. Token nÃ£o fornecido." }
 ```
 
-### ?? 4. Listagem de herois
+### ğŸ“‹ 4. Listagem de herois
 **Rota:** `GET /herois`
 ```sh
 curl http://localhost:3000/herois
@@ -85,7 +85,7 @@ curl http://localhost:3000/herois
 ]
 ```
 
-### ?? 5. Filtrar herois (Query Params)
+### ğŸ” 5. Filtrar herois (Query Params)
 **Rota:** `GET /herois?nome=Batman`
 ```sh
 curl "http://localhost:3000/herois?nome=Batman"
@@ -97,7 +97,7 @@ curl "http://localhost:3000/herois?nome=Batman"
 ]
 ```
 
-### ?? 6. Adicionar Novo Herói
+### âœï¸ 6. Adicionar Novo HerÃ³i
 **Rota:** `POST /herois`
 ```sh
 curl -X POST http://localhost:3000/herois \
@@ -109,8 +109,8 @@ curl -X POST http://localhost:3000/herois \
 { "id": 3, "nome": "Mulher Maravilha" }
 ```
 
-### ? 7. Validação de Dados
-Tente enviar um POST sem um nome válido:
+### âŒ 7. ValidaÃ§Ã£o de Dados
+Tente enviar um POST sem um nome vÃ¡lido:
 ```sh
 curl -X POST http://localhost:3000/herois \
      -H "Content-Type: application/json" \
@@ -118,10 +118,10 @@ curl -X POST http://localhost:3000/herois \
 ```
 **Resposta esperada:**
 ```json
-{ "erro": "O campo 'nome' é obrigatório." }
+{ "erro": "O campo 'nome' Ã© obrigatÃ³rio." }
 ```
 
-### ?? 8. Testando Tratamento Global de Erros
+### âš ï¸ 8. Testando Tratamento Global de Erros
 **Rota:** `GET /erro`
 ```sh
 curl http://localhost:3000/erro
@@ -131,16 +131,16 @@ curl http://localhost:3000/erro
 { "erro": "Algo deu errado!" }
 ```
 
-## ?? Tecnologias Utilizadas
+## ğŸ“Œ Tecnologias Utilizadas
 - **Node.js** + **Express.js**
-- Middleware de autenticação e tratamento de erros
-- Manipulação de query params e JSON
+- Middleware de autenticaÃ§Ã£o e tratamento de erros
+- ManipulaÃ§Ã£o de query params e JSON
 
-## ?? Contribuição
-Fique à vontade para contribuir enviando **Pull Requests** ou reportando problemas na aba **Issues**.
+## ğŸ“Œ ContribuiÃ§Ã£o
+Fique Ã  vontade para contribuir enviando **Pull Requests** ou reportando problemas na aba **Issues**.
 
-## ?? Licença
-Este projeto está sob a licença **MIT**. Sinta-se livre para usá-lo e modificá-lo como quiser.
+## ğŸ“Œ LicenÃ§a
+Este projeto estÃ¡ sob a licenÃ§a **MIT**. Sinta-se livre para usÃ¡-lo e modificÃ¡-lo como quiser.
 
 ---
 **Desenvolvido por [Gabriel Soares](https://github.com/gabriel-fstk)** ??
