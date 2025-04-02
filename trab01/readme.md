@@ -11,11 +11,11 @@ Antes de iniciar, você precisará ter instalado:
 
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/gabriel-fstk/tads-webii-2025.git
    ```
 2. Acesse a pasta do projeto:
    ```sh
-   cd nome-do-projeto
+   cd trab01
    ```
 3. Instale as dependências:
    ```sh
@@ -125,18 +125,11 @@ Para testar os endpoints, utilize o **Postman** seguindo os passos abaixo:
 { "erro": "Nome e poder são obrigatórios!" }
 ```
 
-### ⚠️ 8. Testando Tratamento Global de Erros
-- **Método:** `GET`
-- **URL:** `http://localhost:3000/erro`
-- **Resposta esperada:**
-```json
-{ "erro": "Erro interno do servidor!" }
-```
-
 ## 📌 Tecnologias Utilizadas
 - **Node.js** + **Express.js**
 - Middleware de autenticação e tratamento de erros
 - Manipulação de query params e JSON
+- Postman
 
 ## 📌 Contribuição
 Fique à vontade para contribuir enviando **Pull Requests** ou reportando problemas na aba **Issues**.
